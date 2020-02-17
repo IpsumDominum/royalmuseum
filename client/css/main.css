@@ -96,7 +96,6 @@ color: #F4F4F4;
 .floatright{
  float:right;
 }
- /* Style the video: 100% width and height to cover the entire window */
  #mainbg{
   position: fixed;
   right: 0;
@@ -105,12 +104,25 @@ color: #F4F4F4;
   min-height: 100%;
 }
 
-/* Add some content at the bottom of the video/page */
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
+.contentmain{
+  position: relative;
+  margin-left:20%;
+  margin-right:20%;
+  text-align: center;
+  background-color:transparent;
+  width:60%;
+
+  
+}
+p{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 60px;
+  right:0px;  
+  border-top:whitesmoke groove 2px;
+  border-bottom:whitesmoke groove 2px;
+  background-color: rgba(0,0,0,0.6);
+  color: #F4F4F4;
+    text-decoration:none;
+
+
 }
