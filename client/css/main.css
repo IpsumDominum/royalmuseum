@@ -1,0 +1,116 @@
+
+@keyframes gm-slidein {
+  from {
+      opacity:0;
+  }
+
+  to {
+      opacity:1;      
+  }
+}
+
+
+.navmain {
+  -moz-animation:gm-slidein 6s 1;
+  -ms-animation:gm-slidein 6s 1;
+  -o-animation:gm-slidein 6s 1;
+  -webkit-animation:gm-slidein 6s 1;
+  animation:gm-slidein 6s 1;
+  position:relative;
+  /*background-color: rgba(0, 0, 0, 0.5);*/
+  /*border-bottom:solid whitesmoke 1px ;*/
+  margin-left:20%;
+  margin-right:20%;
+  text-align: center;
+  margin-top:20%;
+
+}
+.cornertext{
+
+  position: absolute;
+  right:50px;
+  bottom:50px;
+  font-family: Rye;
+  font-style: bold;
+  font-weight: bolder;
+  font-size: 500%;
+  color: #F4F4F4;
+    text-decoration:none;
+}
+.navtitle{
+  font-family: Rye;
+font-style: bold;
+font-weight: bolder;
+font-size:100px;
+color: #F4F4F4;
+  text-decoration:none;
+  text-decoration:none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  /*
+    Introduced in IE 10.
+    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+  */
+  -ms-user-select: none;
+  user-select: none;
+}
+.navlink {  
+  line-height: 30px;
+  padding-top:180px;
+}
+.navlinkitem{  
+  font-family: Rye;
+font-style: normal;
+font-weight: normal;
+font-size: 60px;
+margin-right:70px;
+margin-top:170px;
+border-bottom:whitesmoke outset 2px;
+color: #F4F4F4;
+  text-decoration:none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  /*
+    Introduced in IE 10.
+    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+  */
+  -ms-user-select: none;
+  user-select: none;
+}
+.navlinkitem:hover{  
+  font-family: Rye;
+font-style: normal;
+font-weight: normal;
+font-size: 60px;
+margin-right:70px;
+margin-top:170px;
+border-top:whitesmoke groove 2px;
+border-bottom:whitesmoke groove 2px;
+color: #F4F4F4;
+  text-decoration:none;
+}
+.floatright{
+ float:right;
+}
+ /* Style the video: 100% width and height to cover the entire window */
+ #mainbg{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
