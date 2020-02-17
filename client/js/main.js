@@ -7,6 +7,7 @@ var contenttype = "";
 var prevcontent = "";
 var curtab = ""
 var animating = false;
+const tabs = ["about","news","opening","contact"];
 document.onkeyup = function(e){
     mode = "show";
 }
@@ -38,6 +39,18 @@ setInterval(function(){
 
 
 function showtab(tab){
+    if(tab =="News"){
+        if(animating){
+            return;
+        }
+        if(curtab!="News"){
+        contentprogress = 0;    
+        contenttype = "news";
+        window.requestAnimationFrame(slideleftnav);    
+        curtab = "News";
+        }
+        return;
+    }
     switch(tab) {
         case "About": 
         if(animating){
@@ -45,41 +58,45 @@ function showtab(tab){
         }
         if(curtab!="About"){
             contentprogress = 0;    
-            prevcontent = contenttype;
             contenttype = "about";
             window.requestAnimationFrame(slideleftnav);    
+            curtab = "About";
         }
-        curtab = "About"
           break;
+        //////
         case "Opening":
-                if(animating){
-                    break;
-                }
+        if(animating){
+            break;
+        }
         if(curtab!="Opening"){
         contentprogress = 0;    
-        prevcontent = contenttype;
         contenttype = "opening";
         window.requestAnimationFrame(slideleftnav);    
+        curtab = "Opening";
         }
-        curtab = "Opening"
           break;
-        case "News":
- 
         case "Contact":
-                            
-
-
+        if(animating){
+        break;
+        }
+        if(curtab!="Contact"){
+        contentprogress = 0;    
+        contenttype = "contact";
+        window.requestAnimationFrame(slideleftnav);    
+        curtab = "Contact";
+        }                   
         default:
-          // code block
+          /*pass*/
       } 
 }
 function slideleftnav(){
     if(slideup){
-        if(prevcontent!=""){
-            document.getElementById(prevcontent).style.display = "none";
+        for(var content in tabs){
+            if(tabs[content]!=contenttype){
+            document.getElementById(tabs[content]).style.display = "none";
+            }
         }
         document.getElementById(contenttype).style.display = "block";       
-        window.requestAnimationFrame(showcontent);        
         return;
     }
     if(slideprogress<100){
@@ -88,22 +105,11 @@ function slideleftnav(){
         window.requestAnimationFrame(slideleftnav);
     }else{        
         slideup = true;
-        if(prevcontent!=""){
-            document.getElementById(prevcontent).style.display = "none";
-        }
-        document.getElementById(contenttype).style.display = "block";       
-        window.requestAnimationFrame(showcontent);                
-        return;
-    }
-}
-function showcontent(){    
-    if(contentprogress<100){
-        document.getElementById(contenttype).style["opacity"] = (contentprogress/99);             
-    contentprogress +=1;
-    window.requestAnimationFrame(showcontent);        
-    }else{     
-        contentprogress = 0;    
-        animating = false;
+        for(var content in tabs){
+            if(tabs[content]!=contenttype){
+            document.getElementById(tabs[content]).style.display = "none";
+            }
+        }document.getElementById(contenttype).style.display = "block";       
         return;
     }
 }
